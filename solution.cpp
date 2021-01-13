@@ -1,15 +1,15 @@
 /*
 Assumptions:
-	1. the no. of containers present in the truck is equal to the no. of vareities of bears given.
-	2. no. of halts will be given
-	3. the temperature reading of each container will be provided at each halt.
+	1. the no. of containers present in the truck is equal to the no. of vareities of beers given.
+	2. no. of seconds to complete the journey will be given
+	3. the temperature reading of each container will be provided at each second of the journey.
 	4. Inputs:
-		n -> no. of varieties of bears
-		range[n] -> range of suitable temperature for different varieties of bear
-		q -> no . of halts/ stopages where the truck going to stop and temperature of containers may change
-		X -> an array denoting the reading of temperature sensors of each container at all halts.	
+		n -> no. of varieties of beers
+		range[n] -> range of suitable temperature for different varieties of beer
+		q -> no. of seconds truck tarvels from start to destination
+		X -> an array denoting the reading of temperature sensors of each container at each second.	
 	5.Output:
-		A warning is generated at each halt for specific containers if their temperature goes out of the suitable range of the bear.
+		A warning is generated at each second for specific containers if their temperature goes out of the suitable range of the beer.
 */
 
 /*
@@ -20,12 +20,14 @@ Sample Input:
 4 7
 6 8
 3 5
-5
+7
 4 4 4 4 4
 5 5 5 5 5
 6 6 6 6 6
 7 7 7 7 7
 8 8 8 8 8
+1 2 3 4 5
+8 7 6 5 4
 */
 
 #include<bits/stdc++.h>
@@ -37,34 +39,38 @@ signed main()
     //letsgoUltraInstinct;
     //cout<<"I must do it......Yeahhh!!!";
 
-    int n; //no. of bears
-    cout<<"Enter the no. of varieties of bears: ";
+    int n; //no. of beers
+    cout<<"Enter the no. of varieties of beers: ";
     cin>>n;
 
-    pair<int,int> range[n]; //to store the range of temperatures for differnt varieties of bears
-    cout<<"Enter the range of temperatures for each varieties of bear respectively(L, R):\n";
+    pair<int,int> range[n]; //to store the range of temperatures for differnt varieties of beers
+    cout<<"Enter the range of temperatures for each varieties of beer respectively(L, R):\n";
     for(int i=0;i<n;i++)
     {
-    	cout<<"\tFor bear "<< i+1 << ": ";
+    	cout<<"\tFor beer "<< i+1 << ": ";
         cin>>range[i].first>>range[i].second;	
 	}
-    //Assuming that the truck contains equal no. of containers as the no. of variety of bears.
-    //Let i th container contains i th bear
+    //Assuming that the truck contains equal no. of containers as the no. of variety of beers.
+    //Let i th container contains i th beer
 
     cout<<"\nThe initial temperature of the containers will be set to: \n";
     for(int i=0;i<n;i++)
         cout<<"\tFor container "<<i+1<<"-> "<<(range[i].first+range[i].second)/2<<"\n";
 
     cout<<"\nTruck departs from the starting point.\n\n";
+    
+    // Gonna take temperature reading of each container as input each second during the journey of the truck
+    // It may seem a time taking process to take input from the user each second but it will be fine when used 
+	// in real life as the inputs are gonna come from the temperature sensor each second.
 
-    int q; //no. of halts(stoppages) between start and destination 
-    cout<<"Enter the no. of halts(stoppages) between start and destination: ";
+    int q; //no. of seconds truck tarvels from start to destination 
+    cout<<"Enter the duration of journey from start to destination: ";
     cin>>q;
     for(int j=0;j<q;j++)
     {
-        cout<<"For halt "<<j+1<<":\n";
+        cout<<"At second "<<j+1<<":\n";
 
-        //At each halt, reading of the each temperature sensors is taken as input
+        //At each second, reading of the each temperature sensors is taken as input
         
         cout<<"\tEnter the present reading of each temperature sensor of the containers (in the form of array): ";
 
@@ -89,7 +95,7 @@ signed main()
                 cout<<"\t\tWarning!!! Temperature high for container "<<i+1<<". Hurry, decrease the temperature for container "<<i+1<<".\n";
         }
         if(flag==0)
-            cout<<"\t\tAll the bears are under suitable condition.\n";
+            cout<<"\t\tAll the beers are under suitable condition.\n";
     }
 
     cout<<"\nTruck reached Destination :) \n\n";

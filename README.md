@@ -44,22 +44,22 @@ to run your project, including:
 
 ## My Assumptions:
 
-1. the no. of containers present in the truck is equal to the no. of vareities of bears given.
-2. no. of halts will be given
-3. the temperature reading of each container will be provided at each halt.
+1. the no. of containers present in the truck is equal to the no. of vareities of beers given.
+2. duration of journey will be given
+3. the temperature reading of each container will be provided at each second of the journey.
 4. Inputs:
 
-	n -> no. of varieties of bears
+	n -> no. of varieties of beers
 	
-	range[n] -> range of suitable temperature for different varieties of bear
+	range[n] -> range of suitable temperature for different varieties of beer
 	
-	q -> no . of halts/ stopages where the truck going to stop and temperature of containers may change
+	q -> no. of seconds truck tarvels from start to destination
 	
-	X -> an array denoting the reading of temperature sensors of each container at all halts.	
+	X -> an array denoting the reading of temperature sensors of each container at each second.	
 	
 5.Output:
 
-	A warning is generated at each halt for specific containers if their temperature goes out of the suitable range of the bear, otherwise a msg is displayed to tell that all things are fine inside.
+	A warning is generated at each second for specific containers if their temperature goes out of the suitable range of the beer, otherwise a msg is displayed to tell that all things are fine inside.
 
 
 ## Sample Input:
@@ -76,7 +76,7 @@ to run your project, including:
 
 3 5
 
-5
+7
 
 4 4 4 4 4
 
@@ -88,18 +88,22 @@ to run your project, including:
 
 8 8 8 8 8
 
+1 2 3 4 5
+
+8 7 6 5 4
+
 
 ## Sample Output:
 
-Enter the no. of varieties of bears: 5
+Enter the no. of varieties of beers: 5
 
-Enter the range of temperatures for each varieties of bear respectively(L, R):
+Enter the range of temperatures for each varieties of beer respectively(L, R):
 
-        For bear 1: 4 6
-        For bear 2: 5 6
-        For bear 3: 4 7
-        For bear 4: 6 8
-        For bear 5: 3 5
+        For beer 1: 4 6
+        For beer 2: 5 6
+        For beer 3: 4 7
+        For beer 4: 6 8
+        For beer 5: 3 5
 
 The initial temperature of the containers will be set to:
 
@@ -111,34 +115,54 @@ The initial temperature of the containers will be set to:
 
 Truck departs from the starting point.
 
-Enter the no. of halts(stoppages) between start and destination: 5
+Enter the duration of journey from start to destination: 7
 
-For halt 1:
+At second 1:
 
         Enter the present reading of each temperature sensor of the containers (in the form of array): 4 4 4 4 4
+
                 Warning!!! Temperature low for container 2. Hurry, increase the temperature for container 2.
                 Warning!!! Temperature low for container 3. Hurry, increase the temperature for container 3.
                 Warning!!! Temperature low for container 4. Hurry, increase the temperature for container 4.
-For halt 2:
+At second 2:
 
         Enter the present reading of each temperature sensor of the containers (in the form of array): 5 5 5 5 5
+
                 Warning!!! Temperature low for container 4. Hurry, increase the temperature for container 4.
-For halt 3:
+At second 3:
 
         Enter the present reading of each temperature sensor of the containers (in the form of array): 6 6 6 6 6
+
                 Warning!!! Temperature high for container 5. Hurry, decrease the temperature for container 5.
-For halt 4:
+At second 4:
 
         Enter the present reading of each temperature sensor of the containers (in the form of array): 7 7 7 7 7
+
                 Warning!!! Temperature high for container 1. Hurry, decrease the temperature for container 1.
                 Warning!!! Temperature high for container 2. Hurry, decrease the temperature for container 2.
                 Warning!!! Temperature high for container 5. Hurry, decrease the temperature for container 5.
-For halt 5:
+At second 5:
 
         Enter the present reading of each temperature sensor of the containers (in the form of array): 8 8 8 8 8
+
                 Warning!!! Temperature high for container 1. Hurry, decrease the temperature for container 1.
                 Warning!!! Temperature high for container 2. Hurry, decrease the temperature for container 2.
                 Warning!!! Temperature high for container 3. Hurry, decrease the temperature for container 3.
                 Warning!!! Temperature high for container 5. Hurry, decrease the temperature for container 5.
+At second 6:
+
+        Enter the present reading of each temperature sensor of the containers (in the form of array): 1 2 3 4 5
+
+                Warning!!! Temperature low for container 1. Hurry, increase the temperature for container 1.
+                Warning!!! Temperature low for container 2. Hurry, increase the temperature for container 2.
+                Warning!!! Temperature low for container 3. Hurry, increase the temperature for container 3.
+                Warning!!! Temperature low for container 4. Hurry, increase the temperature for container 4.
+At second 7:
+
+        Enter the present reading of each temperature sensor of the containers (in the form of array): 8 7 6 5 4
+
+                Warning!!! Temperature high for container 1. Hurry, decrease the temperature for container 1.
+                Warning!!! Temperature high for container 2. Hurry, decrease the temperature for container 2.
+                Warning!!! Temperature low for container 4. Hurry, increase the temperature for container 4.
 
 Truck reached Destination :)
