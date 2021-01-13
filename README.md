@@ -38,7 +38,9 @@ then send us a zip file with your code or a link where we can download the packa
 to run your project, including:
 
 	a. What are the highlights of your logic/code writing style?
+	
 	b. What could have been done in a better way?
+	
 	c. Any other notes you feel relevant for the evaluation of your solution
 
 
@@ -64,33 +66,20 @@ to run your project, including:
 
 ## Sample Input:
 
-5
-
-4 6
-
-5 6
-
-4 7
-
-6 8
-
-3 5
-
-7
-
-4 4 4 4 4
-
-5 5 5 5 5
-
-6 6 6 6 6
-
-7 7 7 7 7
-
-8 8 8 8 8
-
-1 2 3 4 5
-
-8 7 6 5 4
+	5
+	4 6
+	5 6
+	4 7
+	6 8
+	3 5
+	7
+	4 4 4 4 4
+	5 5 5 5 5
+	6 6 6 6 6
+	7 7 7 7 7
+	8 8 8 8 8
+	1 2 3 4 5
+	8 7 6 5 4
 
 
 ## Sample Output:
